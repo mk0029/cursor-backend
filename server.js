@@ -8,11 +8,7 @@ require("dotenv").config();
 const app = express();
 app.use(cors());
 app.use(express.json());
-
-// Create HTTP server
 const server = http.createServer(app);
-
-// Create Socket.io server with CORS configuration
 const io = new Server(server, {
   cors: {
     origin: process.env.FRONTEND_URL || "http://localhost:3000",
